@@ -1,10 +1,14 @@
 ---
 - hosts: office-server
+  vars:
+    RPMS: "{{ ansible_env['HOME'] }}/RPMS"
   roles:
     - role: utility
     - role: monitor
 
 - hosts: office-build-server
+  vars:
+    RPMS: "{{ ansible_env['HOME'] }}/RPMS"
   roles:
     - role: utility
     - role: nginx
