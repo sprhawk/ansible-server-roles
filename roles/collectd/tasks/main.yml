@@ -1,0 +1,11 @@
+---
+- name: copy collectd rpm package
+  copy: src={{ collectd_rpm }} dest={{ RPMS }}/{{ collectd_rpm }} 
+
+- name: install perl-regexp-common
+  yum: name=perl-Regexp-Common state=present
+  sudo: yes
+
+- name: install collectd
+  yum: name={{ RPMS }}/{{ collectd_rpm }} state=present
+  sudo: yes

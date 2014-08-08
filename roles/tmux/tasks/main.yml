@@ -1,0 +1,7 @@
+---
+- name: copy tmux
+  copy: src={{ tmux_rpm }} dest={{ RPMS }}/{{ tmux_rpm }} mode=0600
+
+- name: install tmux
+  yum: name={{ RPMS }}/{{ tmux_rpm }} state=present
+  sudo: yes

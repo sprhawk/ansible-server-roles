@@ -1,0 +1,11 @@
+---
+- hosts: office-server
+  roles:
+    - role: utility
+    - role: monitor
+
+- hosts: office-build-server
+  roles:
+    - role: utility
+    - role: nginx
+    - role: monitor-node

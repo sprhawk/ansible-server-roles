@@ -1,0 +1,5 @@
+---
+dependencies:
+- { role: RPMS }
+- { role: libevent }
+- { role: ncurses}

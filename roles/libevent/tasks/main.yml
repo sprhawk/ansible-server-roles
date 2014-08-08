@@ -1,0 +1,7 @@
+---
+- name: copy libevent
+  copy: src={{ libevent_rpm }} dest={{ RPMS }}/{{ libevent_rpm }} mode=0600
+
+- name: install libevent
+  yum: name={{ RPMS }}/{{ libevent_rpm }} state=present
+  sudo: yes

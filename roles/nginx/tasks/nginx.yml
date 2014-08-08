@@ -1,0 +1,7 @@
+---
+- name: copy nginx rpm
+  copy: src={{ nginx_rpm }} dest={{ RPMS }}/{{ nginx_rpm }} mode=0600
+
+- name: install nginx
+  yum: name={{ RPMS }}/{{ nginx_rpm }} state=present 
+  sudo: yes
